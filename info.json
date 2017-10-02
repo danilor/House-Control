@@ -1,0 +1,4 @@
+{
+  "name": "House Control",
+  "description": "Experimento para controlar una casa virtual desde un dispositivo móvil. Hecho en PHP y JS (JQuery) y con instrucciones directas a archivos para maximizar el rendimiento (sin utilizar bases de datos)."
+}
