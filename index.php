@@ -174,7 +174,7 @@
             </div>
             <div class="qrcode-form">
                 <form method="POST" action="" id="sendmethelinkform">
-                    <input type="hidden" name="key" id="key" value="<?php echo @$_GET["key"] ?>" />
+                    <input type="hidden" name="key" id="key" value="<?php echo @$key ?>" />
                     <input type="hidden" name="control_url" id="control_url" value="<?php echo getControlUrl(); ?>" />
                     <p>Send me the link to</p>
                     <div class="field">
@@ -206,13 +206,13 @@
         var reading_interval = 200;
         var mobile = false;
 
-        var url_to_send_email = 'process/house.php?send_email=<?php echo $_GET["key"] ?>';
+        var url_to_send_email = 'process/house.php?send_email=<?php echo $key ?>';
 
         function storeHouseKey(){
             logM( "Store House Call" );
             $.ajax({
                 type: "POST",
-                url: "process/house.php?store_key=<?php echo $_GET["key"] ?>",
+                url: "process/house.php?store_key=<?php echo $key ?>",
                 context: document.body
             }).done(function() {
                 logM( "Call success" );
@@ -222,7 +222,7 @@
         function readInstructions(){
             logM( "Read Instructions" );
             $.ajax({
-                url: "process/house.php?read_instructions=<?php echo $_GET["key"] ?>",
+                url: "process/house.php?read_instructions=<?php echo $key ?>",
                 context: document.body
             }).done(function( data ) {
                 logM( "Read Instructions:" + data );

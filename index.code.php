@@ -1,7 +1,9 @@
 <?php
 
+global $key;
 function getControlUrl(){
-	return Common::getRootFolderUrl() . 'control.php?key=' . @$_GET["key"];
+	global $key;
+	return Common::getRootFolderUrl() . 'control.php?key=' . @$key;
 }
 
 if( !isset($_GET["key"]) ){
@@ -9,3 +11,11 @@ if( !isset($_GET["key"]) ){
 	$key = session_id() . Common::randomKey( 32 );
 	header( "Location:index.php?key=" . $key );
 }
+/**
+Lets clean the key
+*/
+
+$key = 		$_GET["key"];
+//$key = 		strip_tags( $key );
+//$key = 		htmlentities( $key );
+$key = 		preg_replace('/[^a-zA-Z0-9]/', '', $key);

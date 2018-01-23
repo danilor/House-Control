@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a5d39dfe-7d52-4cdc-8005-13ed0c980b70" name="Control" url="http://dzbeagle.com">
+        <fileTransfer host="dzbeagle.com" port="21" rootFolder="/httpdocs/test/danilo.r/control/">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
